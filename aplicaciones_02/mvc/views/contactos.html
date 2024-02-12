@@ -1,0 +1,38 @@
+$def with (contactos)
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contactos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contactos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            $for contacto in contactos:
+                <tr>
+                    <td>${contacto["nombre"]}</td>
+                    <td>${contacto["email"]}</td>
+                </tr>
+        </tbody>
+    </table>
+</body>
+</html>
