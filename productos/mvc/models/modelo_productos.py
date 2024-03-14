@@ -6,8 +6,8 @@ class Productos():
         try:
             self.cnx = mysql.connector.connect(
                 user='user_agenda',
-                password='1234',
-                host='localhost',
+                password='Agenda.2024',
+                host='127.0.0.1',
                 port = 3309,
                 database='agenda_db'
                 )
