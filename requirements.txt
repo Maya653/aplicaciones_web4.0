@@ -1,1 +1,8 @@
-web.py
+cheroot==10.0.0
+jaraco.functools==4.0.0
+more-itertools==10.2.0
+psycopg2==2.9.9
+pyglet==2.0.9
+setuptools==68.2.2
+web.py==0.62
+wheel==0.41.2

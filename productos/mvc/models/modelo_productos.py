@@ -1,19 +1,20 @@
-import mysql.connector
+import web
 
-class Productos():
+class ModeloProducto:
+    def __init__(self):
+        self.db = web.database(
+            dbn='postgres',
+            host='127.0.0.1',
+            port=5432,
+            user='postgres',
+            pw='Vasconcelos1',
+            db='productosdb',
+        )
 
-    def connect(self):
+    def obtener_productos(self):
         try:
-            self.cnx = mysql.connector.connect(
-                user='user_agenda',
-                password='Agenda.2024',
-                host='127.0.0.1',
-                port = 3309,
-                database='agenda_db'
-                )
-            self.cursor = self.cnx.cursor()
+            productos = self.db.select('productos')
+            return productos
         except Exception as e:
-            print(e) 
-
-objeto = Productos()
-objeto.connect()
+            print(f"Error al obtener productos de la base de datos: {e}")
+            return None
