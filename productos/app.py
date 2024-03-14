@@ -1,7 +1,8 @@
 import web
 
 urls = (
-    '/', 'mvc.controllers.list.List',
+    '/', 'mvc.controllers.index.Index', 
+    '/list', 'mvc.controllers.list.List',
     '/delete', 'mvc.controllers.delete.Delete',
     '/insert', 'mvc.controllers.insert.Insert',
     '/update', 'mvc.controllers.update.Update',
