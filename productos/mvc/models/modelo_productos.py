@@ -18,3 +18,19 @@ class ModeloProducto:
         except Exception as e:
             print(f"Error al obtener productos de la base de datos: {e}")
             return None
+
+# Prueba de conexión y obtención de productos
+if __name__ == "__main__":
+    # Crear una instancia de ModeloProducto
+    modelo = ModeloProducto()
+
+    # Intentar obtener productos
+    productos = modelo.obtener_productos()
+
+    # Imprimir los productos obtenidos
+    if productos:
+        print("Productos obtenidos:")
+        for producto in productos:
+            print(producto)
+    else:
+        print("No se pudieron obtener productos.")
