@@ -3,10 +3,10 @@ import web
 urls = (
     '/', 'mvc.controllers.index.Index', 
     '/list', 'mvc.controllers.list.List',
-    '/delete', 'mvc.controllers.delete.Delete',
+    '/delete/(.*)', 'mvc.controllers.delete.Delete',
     '/insert', 'mvc.controllers.insert.Insert',
-    '/update', 'mvc.controllers.update.Update',
-    '/view', 'mvc.controllers.view.View',
+    '/update/(.*)', 'mvc.controllers.update.Update',
+    '/view/(.*)', 'mvc.controllers.view.View',
 )
 app = web.application(urls, globals())
 

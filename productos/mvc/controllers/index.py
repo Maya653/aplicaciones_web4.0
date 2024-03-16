@@ -1,13 +1,15 @@
 import web
-from mvc.models.modelo_productos import ModeloProducto
 
-render = web.template.render('mvc/views/', base = 'layout')
-m_productos = ModeloProducto()
+import mvc.models.modelo_productos as modelo_productos
+
+model_productos = modelo_productos.ModeloProducto()
+
+render = web.template.render("mvc/views/", base="layout")
 
 class Index():
+
     def GET(self):
         try:
-            productos = m_productos.obtener_productos()
-            return render.index(productos)
+            return render.index()
         except Exception as e:
-            print(f'Error {e.args}')
+            return "Error"

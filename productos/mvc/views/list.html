@@ -1,1 +1,29 @@
+$def with (productos)
 <h1>List</h1>
+
+<table class="table">
+  <thead  class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Precio</Pre></th>
+      <th scope="col">Existencias</th>
+      <th scope="col">DELETE</th>
+      <th scope="col">UPDATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    $for row in productos:
+    <tr>
+      <td>$row['id']</td>
+      <td><a href="/view/$row['id']">$row['nombre']</a></td>
+      <td>$row['descripcion']</td>    
+      <td>$row['precio']</td>
+      <td>$row['existencias']</td>
+      <td><a href="/delete/$row['id']">DELETE</a></td> 
+      <td><a href="/update/$row['id']">UPDATE</a></td>
+
+    </tr>
+  </tbody>
+</table>
